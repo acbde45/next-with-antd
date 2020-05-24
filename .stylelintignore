@@ -1,6 +1,2 @@
-*.svg
-*.ejs
-.DS_Store
-src/locales/**/*.json
 public/static/css/dart.theme.css
 public/static/css/default.theme.css

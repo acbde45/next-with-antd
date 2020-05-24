@@ -1,3 +1,5 @@
+const dev = process.env.NODE_ENV !== "production";
+
 const withLess = require('@zeit/next-less');
 const withImages = require('next-images');
 const withOffline = require('next-offline')

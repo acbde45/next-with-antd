@@ -20,10 +20,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#72B340" />
           <link rel="manifest" href="/static/manifest.json" />
           <link rel="icon" href="/static/img/favicon.ico" />
-          <link
-            href={`https://cdn.jsdelivr.net/npm/antd@${pkg.dependencies.antd}/dist/antd.min.css`}
-            rel="stylesheet"
-          />
+          <link href="/static/css/default.theme.css" rel="stylesheet" />
           <link href="/static/css/nprogress.css" rel="stylesheet" />
         </Head>
         <body>

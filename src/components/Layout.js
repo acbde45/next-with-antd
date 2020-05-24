@@ -6,7 +6,7 @@ import '@/styles/layout.less';
 const { Header, Content, Footer, Sider } = AntLayout;
 const { SubMenu } = Menu;
 
-function AppLayout({ children, title = '主页' }) {
+function AppLayout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
 
   const onCollapse = () => {

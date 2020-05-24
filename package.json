@@ -16,7 +16,8 @@
     "lint:style": "stylelint \"src/**/*.less\" --syntax less",
     "prettier": "prettier --write 'src/**/*.{js,less}'",
     "format": "onchange 'src/**/*.{js,less}' -- prettier --write {{changed}}",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "exposeAntStyle": "node scripts/exposeAntStyle.js"
   },
   "dependencies": {
     "@zeit/next-less": "^1.0.1",
@@ -29,7 +30,7 @@
     "lru-cache": "^5.1.1",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
-    "next": "^9.4.2",
+    "next": "^9.3.5",
     "next-images": "^1.4.0",
     "next-offline": "^5.0.2",
     "nprogress": "^0.2.0",
