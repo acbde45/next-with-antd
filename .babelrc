@@ -1,8 +1,25 @@
 {
-	"presets": ["next/babel"],
-	"plugins": [
-		["@babel/plugin-proposal-decorators", { "legacy": true }],
-		["@babel/plugin-proposal-class-properties", { "loose": true }],
-		["import", { "libraryName": "antd-mobile", "style": "css" }]
-	]
+  "presets": ["next/babel"],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    ["import", { "libraryName": "antd-mobile", "style": "css" }],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@/api": "./src/api",
+          "@/common": "./src/common",
+          "@/components": "./src/components",
+          "@/config": "./src/config",
+          "@/constants": "./src/constants",
+          "@/services": "./src/services",
+          "@/store": "./src/store",
+          "@/styles": "./src/styles",
+          "@/utils": "./src/utils",
+          "@/public": "./public"
+        }
+      }
+    ]
+  ]
 }

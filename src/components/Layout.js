@@ -1,15 +1,17 @@
 import Head from 'next/head';
-import { Layout, BackTop } from 'antd';
+import Router from 'next/router';
+import { Layout as AntLayout, BackTop } from 'antd';
 import 'isomorphic-fetch';
+import NProgress from 'nprogress';
 import pkg from '../../package.json';
 
-// Router.onRouteChangeStart = () => NProgress.start()
-// Router.onRouteChangeComplete = () => NProgress.done()
-// Router.onRouteChangeError = () => NProgress.done()
+Router.onRouteChangeStart = () => NProgress.start();
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
-const { Content } = Layout;
+const { Content } = AntLayout;
 
-const LayoutPage = ({ children, title = '主页' }) => (
+const AppLayout = ({ children, title = '主页' }) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -22,6 +24,7 @@ const LayoutPage = ({ children, title = '主页' }) => (
         href={`https://cdn.jsdelivr.net/npm/antd@${pkg.dependencies.antd}/dist/antd.min.css`}
         rel="stylesheet"
       />
+      <link href="/static/css/nprogress.css" rel="stylesheet" />
     </Head>
 
     <Content>{children}</Content>
@@ -30,4 +33,4 @@ const LayoutPage = ({ children, title = '主页' }) => (
   </div>
 );
 
-export default LayoutPage;
+export default AppLayout;
