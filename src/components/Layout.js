@@ -20,6 +20,8 @@ const AppLayout = ({ children, title = '主页' }) => (
         name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"
       />
+      <link rel="manifest" href="static/manifest.json" />
+      <link rel="icon" href="static/img/favicon.ico" />
       <link
         href={`https://cdn.jsdelivr.net/npm/antd@${pkg.dependencies.antd}/dist/antd.min.css`}
         rel="stylesheet"

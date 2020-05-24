@@ -1,5 +1,8 @@
 const dev = process.env.NODE_ENV !== "production";
 
+const { join } = require('path')
+const { parse } = require('url')
+
 const next = require("next");
 const express = require("express");
 const LRUCache = require("lru-cache");
@@ -19,6 +22,14 @@ const SERVE_PORT = parseInt(process.env.PORT, 10) || 3000;
 
 app.prepare().then(() => {
   const server = express();
+
+  server.get("/service-worker.js", async (req, res) => {
+    const parsedUrl = parse(req.url, true);
+    const { pathname } = parsedUrl;
+    const filePath = join(__dirname, '../.next/static', pathname);
+
+    app.serveStatic(req, res, filePath)
+  });
 
   server.get("/", async (req, res) => {
     renderAndCache(req, res, "/", { ...req.query });

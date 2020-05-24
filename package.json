@@ -16,11 +16,7 @@
     "lint:style": "stylelint \"src/**/*.less\" --syntax less",
     "prettier": "prettier --write 'src/**/*.{js,less}'",
     "format": "onchange 'src/**/*.{js,less}' -- prettier --write {{changed}}",
-    "precommit": "lint-staged",
-    "build:server": "NEXT_TARGET=server next build",
-    "export:server": "NEXT_TARGET=server next export",
-    "export": "npm run build:server && npm run export:server",
-    "start:static": "serve"
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "@zeit/next-less": "^1.0.1",
@@ -35,6 +31,7 @@
     "mobx-react": "^6.2.2",
     "next": "^9.4.2",
     "next-images": "^1.4.0",
+    "next-offline": "^5.0.2",
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -59,7 +56,6 @@
     "null-loader": "^4.0.0",
     "onchange": "^7.0.2",
     "prettier": "^2.0.5",
-    "serve": "^11.1.0",
     "stylelint": "^13.2.0",
     "stylelint-config-prettier": "^8.0.0",
     "stylelint-config-standard": "^20.0.0",
