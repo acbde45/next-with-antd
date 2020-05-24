@@ -6,6 +6,7 @@ module.exports = {
   webpack: (config, options) => {
     withLess().webpack(config, options);
     withImages().webpack(config, options);
+
     withOffline({
       workboxOpts: {
         swDest: 'static/service-worker.js',
