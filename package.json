@@ -1,0 +1,78 @@
+{
+  "name": "standard-product",
+  "private": true,
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "scripts": {
+    "dev": "node server",
+    "build": "next build",
+    "start": "cross-env NODE_ENV=production node server",
+    "lint:js": "eslint --ext .js src",
+    "lint:style": "stylelint \"src/**/*.less\" --syntax less",
+    "prettier": "prettier --write 'src/**/*.{js,less}'",
+    "format": "onchange 'src/**/*.{js,less}' -- prettier --write {{changed}}",
+    "precommit": "lint-staged",
+    "build:server": "NEXT_TARGET=server next build",
+    "export:server": "NEXT_TARGET=server next export",
+    "export": "npm run build:server && npm run export:server",
+    "start:static": "serve"
+  },
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "antd": "^4.2.4",
+    "antd-mobile": "^2.3.3",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "isomorphic-fetch": "^2.2.1",
+    "less": "^3.11.1",
+    "lru-cache": "^5.1.1",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
+    "next": "^9.4.2",
+    "next-images": "^1.4.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-import": "^1.13.0",
+    "eslint": "^6.2.0",
+    "eslint-config-react-app": "^5.0.1",
+    "eslint-plugin-flowtype": "^5.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "husky": "^4.2.5",
+    "immutable": "^4.0.0-rc.12",
+    "null-loader": "^4.0.0",
+    "onchange": "^7.0.2",
+    "prettier": "^2.0.5",
+    "serve": "^11.1.0",
+    "stylelint": "^13.2.0",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "webpack": "^4.43.0"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --ext .js --fix",
+      "npm run prettier",
+      "git add"
+    ],
+    "**/*.less": [
+      "stylelint --syntax less",
+      "npm run prettier",
+      "git add"
+    ]
+  }
+}
